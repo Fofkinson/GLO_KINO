@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GLO-Kinopoisk</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <style>
+    img {
+      width: 100%;
+    }
+
+    .img_post {
+      height: 360px;
+    }
+
+    .item {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .spinner {
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+      border: 10px solid;
+      border-radius: 50%;
+      border-left-color: transparent;
+      border-top-color: #aaa;
+      border-right-color: #555;
+      border-bottom-color: #000;
+      animation: spin 500ms;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+  </style>
+
+  <div class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">GLO Kinopoisk</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="text-center">Поиск фильмов, сериалов</h3>
+      <form action="" id="search-form">
+        <input type="text" class="form-control" id="searchText" placeholder="Введите название">
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div id="movies" class="row"></div>
+  </div>
+
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
