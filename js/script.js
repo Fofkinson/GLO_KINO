@@ -41,7 +41,7 @@ function apiSearch(event) {
           <b class="text-primary">${nameItem}</b>
           <div class="card-body">
             <p class="card-text"><span class="badge badge-info p-2">Рейтинг: ${rating}</span></p>
-            <p class="card-text text-primary">Дата выхода:<br/>${dataItem}</p>
+            <p class="card-text text-primary">Дата релиза:<br/>${dataItem}</p>
             <a href="https://www.themoviedb.org/${item.media_type}/${item.id}" class="btn btn-primary" target="_blank">Перейти</a>
           </div>
           </div>
