@@ -26,7 +26,8 @@ function apiSearch(event) {
       }
       output.results.forEach(function (item) {
         let nameItem = item.name || item.title;
-        let dateItem = item.release_date || item.first_air_date || "неизвестна";
+        let rating = item.vote_average || 'нет';
+        let dataItem = item.release_date || item.first_air_date || "неизвестна";
         const poster = item.poster_path ? urlPoster + item.poster_path : './img/nf.jpg';
 
         let dataInfo = '';
@@ -34,10 +35,16 @@ function apiSearch(event) {
         if (item.media_type !== 'person') dataInfo = `data-id="${item.id}" data-type="${item.media_type}"`;
 
         inner += `
-        <div class="col-12 col-md-6 col-xl-3 item">
-          <img src="${poster}" class="img_post" alt="${nameItem}" ${dataInfo}>
-          <h4>${nameItem}</h4>
-          <h5>${dateItem}</h5>
+        <div class="col-12 col-md-4 col-xl-3 text-center cards">
+          <div class="card mb-3">
+            <img src="${poster}" class="card-img-top img_poster" alt="${nameItem}" title="${nameItem}" ${dataInfo}>
+          <b class="text-primary">${nameItem}</b>
+          <div class="card-body">
+            <p class="card-text"><span class="badge badge-info p-2">Рейтинг: ${rating}</span></p>
+            <p class="card-text text-primary">Дата выхода:<br/>${dataItem}</p>
+            <a href="https://www.themoviedb.org/${item.media_type}/${item.id}" class="btn btn-primary" target="_blank">Перейти</a>
+          </div>
+          </div>
         </div>
         `;
       });
